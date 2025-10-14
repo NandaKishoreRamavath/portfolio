@@ -1,0 +1,239 @@
+.about {
+  width: 100%;
+  height: 37.5rem;
+  background-color: var(--softGreen);
+  padding: 3rem 3rem 0 6.25rem;
+}
+
+.about_holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.img_holder {
+  position: relative;
+}
+
+#abtMeImg {
+  width: 35vw;
+}
+
+.img_holder .hireMe {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  left: 80%;
+  z-index: 3;
+}
+
+.img_holder .hireMe img {
+  width: 4rem;
+  z-index: 2;
+}
+.img_holder #hireMeOuter {
+  position: absolute;
+  width: 8rem;
+  z-index: 1;
+  animation: 5s ease-in-out infinite rotate;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.img_holder .about_tags{
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.img_holder .about_tags .tag{
+    position: relative;
+    font-family: var(--strongBox);
+    font-size: var(--font20px);
+    letter-spacing: 1px;
+    color: var(--darkGreen);
+    background-color: var(--cream);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+}
+
+.img_holder .about_tags .tag1{
+    top: 10vw;
+    left: 55vw;
+}
+
+.img_holder .about_tags .tag2{
+    top: 35vw;
+    left: -20vw;
+}
+/* ------------------------------------------------- */
+
+.about_content {
+  width: 60vw;
+  margin-top: -4rem;
+}
+.about_content h2 {
+  font-family: var(--strongArm);
+  color: var(--darkGreen);
+  font-size: var(--font48px);
+  font-weight: 400;
+}
+.abt_dicript_content {
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.about_content .abt_dicript_content p {
+  font-family: var(--Tomorrow);
+  color: var(--cream);
+  font-size: var(--font20px);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.abt_dicript_content ul {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-family: var(--Tomorrow);
+  color: var(--cream);
+  font-size: var(--font18px);
+  grid-row-gap: 1rem;
+}
+
+.abt_dicript_content ul li {
+  margin-left: 2rem;
+  font-weight: 600;
+}
+
+.abt_dicript_content ul li:nth-child(4) {
+  -ms-grid-column-span: 2;
+  grid-column: span 2;
+}
+
+.abt_dicript_content #resumeBtn {
+  font-family: var(--strongArm);
+  color: var(--cream);
+  font-size: var(--font20px);
+  background-color: var(--darkGreen);
+  padding: 0.75rem 1.5rem 0.5rem;
+  border: none;
+  border-radius: 0.313rem;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------- */
+
+@media screen and (max-width: 1080px) {
+  .about {
+    height: 100%;
+    padding: 3rem 5rem;
+  }
+  .about_holder {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+  .about_content .abt_dicript_content p {
+        font-size: var(--font20px);
+    }
+
+  #abtMeImg {
+    width: 70vw;
+  }
+  .img_holder .hireMe img {
+    width: 5rem;
+  }
+  .img_holder #hireMeOuter {
+    width: 10rem;
+  }
+  .about_content {
+    width: 100%;
+  }
+  .abt_dicript_content #resumeBtn {
+    font-size: var(--font24px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    height: 100%;
+    padding: 3rem;
+  }
+  .about_holder {
+    flex-direction: column-reverse;
+    gap: 5rem;
+  }
+
+  #abtMeImg {
+    width: 70vw;
+  }
+  .img_holder .hireMe img {
+    width: 3.5rem;
+  }
+  .img_holder #hireMeOuter {
+    width: 7rem;
+  }
+  .about_content {
+    width: 100%;
+  }
+  .img_holder .hireMe {
+        display: none;
+    }
+    .img_holder .about_tags{
+    display: block;
+}
+
+.abt_dicript_content #resumeBtn {
+    font-size: var(--font20px);
+  }
+}
+
+@media screen and (max-width: 435px) {
+    .about_content h2 {
+        font-size: var(--font32px);
+    }
+    .about_content .abt_dicript_content p {
+        font-size: var(--font16px);
+    }
+    .abt_dicript_content ul {
+        display: none;
+    }
+    .abt_dicript_content #resumeBtn {
+        margin-left: -2.5rem;
+    }
+    .img_holder .hireMe {
+        display: none;
+    }
+    .img_holder .about_tags .tag{
+        font-size: var(--font12px);
+        font-weight: 600;
+        padding: 0.4rem 0.8rem;
+    }
+    .img_holder .about_tags .tag1{
+    top: 10vw;
+    left: 55vw;
+}
+
+.img_holder .about_tags .tag2{
+    top: 35vw;
+    left: -6rem;
+}
+
+.abt_dicript_content #resumeBtn {
+    font-size: var(--font18px);
+  }
+}

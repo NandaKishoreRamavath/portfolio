@@ -1,0 +1,26 @@
+:root{
+  --darkGreen : #123524;
+  --softGreen : #85A947;
+  --forrestGreen : #3E7B27;
+  --cream : #EFE3C2;
+
+  --strongArm : StrongArm, Arial, Helvetica, sans-serif;
+  --strongBox : StrongBox, Arial, Helvetica, sans-serif;
+  --Tomorrow : 'Tomorrow', Arial, Helvetica, sans-serif;
+  --Outfit : 'Outfit', Arial, Helvetica, sans-serif;
+
+  --font64px : 4rem;
+  --font52px : 3.25rem;
+  --font48px : 3rem;
+  --font42px : 2.625rem;
+  --font36px : 2.25rem;
+  --font32px : 2rem;
+  --font28px : 1.75rem;
+  --font24px : 1.5rem;
+  --font20px : 1.25rem;
+  --font18px : 1.125rem;
+  --font16px : 1rem;
+  --font14px : 0.875rem;
+  --font12px : 0.75rem;
+  --font10px : 0.625rem;
+} 
