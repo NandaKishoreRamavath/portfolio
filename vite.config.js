@@ -10,7 +10,6 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/portfolio/',
   server: {
     watch: {
       usePolling: true
