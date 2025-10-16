@@ -4,8 +4,7 @@
     width: 22rem;
     background-color: var(--darkGreen);
     border-radius: 15px;
-    transition: 200ms ease-in;
-    
+    transition: 300ms ease-in-out;
 }
 
 
@@ -126,10 +125,7 @@
 .action_btn .inactive_btn{
     background: none;
     border: none;
-    transition: 300ms ease-in-out;
-    transition-delay: 2s;
-    
-    
+    transition: 200ms ease-in-out;
 }
 .action_btn #primaryBtn{
     width: 6.25rem;
@@ -140,7 +136,7 @@
     position: relative;
    width: 11rem;
 height: 4rem;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -151,6 +147,8 @@ height: 4rem;
     transform: scale(0);
     box-shadow: 2px 8px 8px rgba(0,0,0,50%);
     cursor: pointer;
+     opacity: 0;
+    
 }
 @keyframes activeBtn{
     0%{
@@ -209,11 +207,13 @@ height: 4rem;
 }
 
 .service_card_active .inactive_btn{
-    display: none;
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
 }
 
 .service_card_active .active_btn{
-    display: flex;
+    opacity: 1;
     animation: activeBtn 500ms ease-in;
     transform: scale(1);
 }

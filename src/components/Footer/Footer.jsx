@@ -31,7 +31,7 @@ function Footer() {
             <a href="" className="social_btn">
               <img src={fb} alt="" />
             </a>
-            <a href="" className="social_btn">
+            <a href="https://www.reddit.com/user/Distinct-Station7063/" className="social_btn">
               <img src={reddit} alt="" />
             </a>
             <a href="" className="social_btn">
@@ -82,7 +82,7 @@ function Footer() {
             <a href="" className="social_btn">
               <img src={fb} alt="" />
             </a>
-            <a href="" className="social_btn">
+            <a href="https://www.reddit.com/user/Distinct-Station7063/" className="social_btn">
               <img src={reddit} alt="" />
             </a>
             <a href="" className="social_btn">

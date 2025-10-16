@@ -9,15 +9,6 @@ function Navbar() {
   const [active, setActive] = useState(false);
   const [hoveringBtn, setHoveringBtn] = useState(false);
 
-  const menuBtn = document.getElementById("discs");
-  const menuSlide = document.getElementById("menuSlide");
-
-  const togglMenu = () => {
-    menuBtn.classList.toggle("discs_active");
-    menuSlide.classList.toggle("menu_slide_active");
-    setActive(!active);
-  };
-
   const onBtnMouseEnter = () => setHoveringBtn(true);
   const onBtnMouseLeave = () => setHoveringBtn(false);
 
@@ -32,7 +23,7 @@ function Navbar() {
         </NavLink>
         <h4>Soft Matter</h4>
         <div className={`menu ${active && !hoveringBtn ? 'menu_active' : ''}`}>
-          <div className="discs" id="discs" onClick={togglMenu}
+          <div className={`discs ${active ? 'discs_active' : ''}`} id="discs" onClick={() => setActive(!active)}
           onMouseEnter={onBtnMouseEnter}
         onMouseLeave={onBtnMouseLeave}
           >
@@ -47,7 +38,7 @@ function Navbar() {
               </div>
             </div>
           </div>
-          <div className="menu_slide" id="menuSlide">
+          <div className={`menu_slide ${active ? 'menu_slide_active' : ''}`} id="menuSlide">
             <NavLink to='projects'>Projects</NavLink>
           </div>
         </div>

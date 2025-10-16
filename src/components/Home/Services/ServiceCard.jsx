@@ -44,7 +44,7 @@ function ServiceCard({ data, isActive, onActivate }) {
           {data.tags.map((tag, idx) => (
             <li key={idx}>{tag}</li>
           ))}
-        </ul>
+        </ul> 
       </div>
       <div className="action_btn">
         <button onClick={onActivate} className="inactive_btn">
