@@ -8,7 +8,7 @@ import primaryPlayBtn from "../../../assets/images/services/playbtnPrimary.webp"
 function ServiceCard({ data, isActive, onActivate }) {
 
   return (
-    <sections className={`service ${isActive ? "service_card_active" : ""}`} id="service">
+    <section className={`service ${isActive ? "service_card_active" : ""}`} id="service">
       <div className="service_header">
         <div className="service_head">
           <h3>{data.header}</h3>
@@ -55,7 +55,7 @@ function ServiceCard({ data, isActive, onActivate }) {
           <span>REVIEW</span>
         </button>
       </div>
-    </sections>
+    </section>
   );
 }
 

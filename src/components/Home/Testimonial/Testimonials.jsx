@@ -18,9 +18,8 @@ function Testimonials() {
   return (
     <section className="testimonials">
       {testimonials.map((data, idx) => (
-        <>
+        <div key={idx}>
           <div
-            key={idx}
             className={`tm_holder ${idx === currentIndex ? "tm_active" : ""}`}
             id="tm_holder"
           >
@@ -43,7 +42,7 @@ function Testimonials() {
             ))}
             <img src={data.poster} alt="" className="tag tagImg" />
           </div>
-        </>
+        </div>
       ))}
     </section>
   );

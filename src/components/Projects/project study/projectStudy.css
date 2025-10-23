@@ -1,0 +1,107 @@
+.project_study {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  /* height: 100vh; */
+  background-color: var(--softGreen);
+}
+.content {
+  width: 100%;
+  background-color: var(--darkGreen);
+  padding: 3rem 6.25rem;
+  /* text-align: center; */
+  font-family: var(--Tomorrow);
+  font-size: var(--font24px);
+  color: var(--cream);
+  /* whiteSpace: "pre-line"; */
+}
+
+.content h3 {
+  font-family: var(--strongArm);
+  font-weight: 400;
+  font-size: var(--font48px);
+  color: var(--softGreen);
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-left: 1rem;
+}
+
+.exitBtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 2rem 2rem 2rem 0;
+}
+
+.exitBtn::before {
+  content: "";
+  position: absolute;
+  right: -110%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  border-radius: 45% 0 0 45%;
+  transition: 100ms ease-out;
+  transition-delay: 100ms;
+  z-index: 0;
+  transform: translateY(-3%);
+}
+.exitBtn:hover::before {
+  border: 2px solid var(--softGreen);
+  background-color: var(--forrestGreen);
+}
+
+.exitBtn button {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: none;
+  font-family: var(--strongArm);
+  font-size: var(--font52px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  transition: 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.exitBtn button img {
+  transition: 200ms ease-in-out;
+}
+.exitBtn button:hover {
+  border: 2px solid var(--softGreen);
+  background-color: var(--forrestGreen);
+}
+.exitBtn button:hover img {
+  transform: scale(0.7) rotate(90deg);
+}
+
+/* ------------------------------------------------------ */
+
+.content_showcase{
+    width: 100%;
+    padding: 3rem 6.25rem;
+     background-color: var(--softGreen);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 3rem;
+}
+
+.showcase_items{
+   background-color: #F8F4E1;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.showcase_items img{
+    width: 100%;
+    border-radius: 15px;
+    /* padding: 2rem; */
+}
