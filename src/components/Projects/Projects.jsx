@@ -29,58 +29,16 @@ function Projects() {
 
   // Touch tracking
   const touchStartY = useRef(0);
-  const touchEndY = useRef(0);
-
-  // Throttle control
   const isScrolling = useRef(false);
 
-  const handleScroll = useCallback(
-    (e) => {
-      if (isScrolling.current || expandedProjectIndex !== null) return;
-
-      if (e.deltaY > 0 && activeIndex < projectsData.length - 1) {
-        setActiveIndex((idx) => idx + 1);
-        isScrolling.current = true;
-      } else if (e.deltaY < 0 && activeIndex > 0) {
-        setActiveIndex((idx) => idx - 1);
-        isScrolling.current = true;
-      }
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 2000); // Adjust delay to match your transition speed
-    },
-    [activeIndex, expandedProjectIndex]
-  );
-  // Handle touch start
-  const handleTouchStart = (e) => {
-    touchStartY.current = e.touches[0].clientY;
-    // Prevent pull-to-refresh when swiping down (unless at top of page)
-    if (window.scrollY === 0) {
-      e.preventDefault();
-    }
-  };
-
-  // Handle touch end (swipe detection)
-  const handleTouchEnd = (e) => {
-    touchEndY.current = e.changedTouches[0].clientY;
-    handleSwipe();
-  };
-
-  // Detect swipe direction
-  const handleSwipe = () => {
+  // ✅ Unified navigation function
+  const handleNavigation = useCallback((direction) => {
     if (isScrolling.current || expandedProjectIndex !== null) return;
 
-    const swipeThreshold = 50; // minimum distance to register as swipe
-    const difference = touchStartY.current - touchEndY.current;
-
-    // Swipe up (next project)
-    if (difference > swipeThreshold && activeIndex < projectsData.length - 1) {
+    if (direction === "next" && activeIndex < projectsData.length - 1) {
       setActiveIndex((idx) => idx + 1);
       isScrolling.current = true;
-    }
-    // Swipe down (previous project)
-    else if (difference < -swipeThreshold && activeIndex > 0) {
+    } else if (direction === "prev" && activeIndex > 0) {
       setActiveIndex((idx) => idx - 1);
       isScrolling.current = true;
     }
@@ -88,20 +46,66 @@ function Projects() {
     setTimeout(() => {
       isScrolling.current = false;
     }, 2000);
-  };
+  }, [activeIndex]);
 
-  // Attach event listeners
+  // ✅ Handle scroll
+  const handleScroll = useCallback(
+    (e) => {
+      if (e.deltaY > 0) {
+        handleNavigation("next");
+      } else if (e.deltaY < 0) {
+        handleNavigation("prev");
+      }
+    },
+    [handleNavigation]
+  );
+
+  // ✅ Handle touch start
+  const handleTouchStart = useCallback((e) => {
+    touchStartY.current = e.touches[0].clientY;
+  }, []);
+
+  // ✅ Handle touch move - PREVENT DEFAULT HERE to stop pull-to-refresh
+  const handleTouchMove = useCallback((e) => {
+    const touchCurrentY = e.touches[0].clientY;
+    const difference = touchStartY.current - touchCurrentY;
+
+    // If swiping down, prevent default to block pull-to-refresh
+    if (difference < -10) {
+      e.preventDefault();
+    }
+  }, []);
+
+  // ✅ Handle touch end
+  const handleTouchEnd = useCallback(
+    (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const difference = touchStartY.current - touchEndY;
+      const swipeThreshold = 50;
+
+      if (difference > swipeThreshold) {
+        handleNavigation("next");
+      } else if (difference < -swipeThreshold) {
+        handleNavigation("prev");
+      }
+    },
+    [handleNavigation]
+  );
+
+  // ✅ Attach event listeners - CRITICAL: passive: false for touchmove
   useEffect(() => {
     window.addEventListener("wheel", handleScroll, { passive: false });
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false }); // ← KEY FIX
     window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
       window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [handleScroll]);
+  }, [handleScroll, handleTouchStart, handleTouchMove, handleTouchEnd]);
 
   const toggleExpand = (idx) => {
     if (expandedProjectIndex === idx) {
