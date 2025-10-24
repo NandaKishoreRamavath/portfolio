@@ -13,21 +13,21 @@ function Projects() {
   const [expandedProjectIndex, setExpandedProjectIndex] = useState(null);
   const [btnName, setBtnName] = useState("View Case");
 
-    // Set initial activeIndex based on URL parameter
+  // Set initial activeIndex based on URL parameter
   useEffect(() => {
     if (id) {
       // Find the index of the project with matching id
       const projectIndex = projectsData.findIndex(
         (project) => project.id === parseInt(id)
       );
-      
+
       if (projectIndex !== -1) {
         setActiveIndex(projectIndex);
       }
     }
   }, [id]); // Run when id changes
 
-    // Touch tracking
+  // Touch tracking
   const touchStartY = useRef(0);
   const touchEndY = useRef(0);
 
@@ -55,6 +55,10 @@ function Projects() {
   // Handle touch start
   const handleTouchStart = (e) => {
     touchStartY.current = e.touches[0].clientY;
+    // Prevent pull-to-refresh when swiping down (unless at top of page)
+    if (window.scrollY === 0) {
+      e.preventDefault();
+    }
   };
 
   // Handle touch end (swipe detection)
@@ -102,10 +106,10 @@ function Projects() {
   const toggleExpand = (idx) => {
     if (expandedProjectIndex === idx) {
       setBtnName("View Case");
-      setExpandedProjectIndex(null);  // close case study view
+      setExpandedProjectIndex(null); // close case study view
     } else {
       setExpandedProjectIndex(idx);
-      setBtnName("close case");   // open case study view
+      setBtnName("close case"); // open case study view
     }
 
     setTimeout(() => {
@@ -117,7 +121,7 @@ function Projects() {
   const onClose = () => {
     setExpandedProjectIndex(null);
     setBtnName("View Case");
-  }
+  };
 
   return (
     <section className="projects">
