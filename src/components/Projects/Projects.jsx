@@ -46,27 +46,37 @@ function Projects() {
     setTimeout(() => {
       isScrolling.current = false;
     }, 2000);
-  }, [activeIndex]);
+  }, [activeIndex, expandedProjectIndex]);
 
   // ✅ Handle scroll
   const handleScroll = useCallback(
     (e) => {
+       // ❌ Don't handle scroll when project study is expanded
+       if (expandedProjectIndex !== null) return;
+
       if (e.deltaY > 0) {
         handleNavigation("next");
       } else if (e.deltaY < 0) {
         handleNavigation("prev");
       }
     },
-    [handleNavigation]
+    [handleNavigation, expandedProjectIndex]
   );
 
   // ✅ Handle touch start
   const handleTouchStart = useCallback((e) => {
+
+      // ❌ Don't handle touch when project study is expanded
+      if (expandedProjectIndex !== null) return;
+
     touchStartY.current = e.touches[0].clientY;
-  }, []);
+  }, [expandedProjectIndex]);
 
   // ✅ Handle touch move - PREVENT DEFAULT HERE to stop pull-to-refresh
   const handleTouchMove = useCallback((e) => {
+      // ❌ Don't handle touch when project study is expanded
+      if (expandedProjectIndex !== null) return;
+
     const touchCurrentY = e.touches[0].clientY;
     const difference = touchStartY.current - touchCurrentY;
 
@@ -74,11 +84,15 @@ function Projects() {
     if (difference < -10) {
       e.preventDefault();
     }
-  }, []);
+  }, [expandedProjectIndex]);
 
   // ✅ Handle touch end
   const handleTouchEnd = useCallback(
     (e) => {
+
+        // ❌ Don't handle touch when project study is expanded
+      if (expandedProjectIndex !== null) return;
+
       const touchEndY = e.changedTouches[0].clientY;
       const difference = touchStartY.current - touchEndY;
       const swipeThreshold = 50;
@@ -89,7 +103,7 @@ function Projects() {
         handleNavigation("prev");
       }
     },
-    [handleNavigation]
+    [handleNavigation, expandedProjectIndex]
   );
 
   // ✅ Attach event listeners - CRITICAL: passive: false for touchmove
