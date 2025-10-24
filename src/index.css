@@ -27,3 +27,8 @@
     font-weight: 400;
     scroll-behavior: smooth;
 }
+
+html,
+body {
+  overscroll-behavior-y: contain;
+}
