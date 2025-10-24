@@ -1,4 +1,6 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+
+import { useParams } from "react-router-dom";
 
 import "./projects.css";
 import projectsData from "../../app data/projects.js";
@@ -6,9 +8,25 @@ import ProjectCard from "./project card/ProjectCard.jsx";
 import ProjectStudy from "./project study/ProjectStudy.jsx";
 
 function Projects() {
+  const { id } = useParams();
   const [activeIndex, setActiveIndex] = useState(0);
   const [expandedProjectIndex, setExpandedProjectIndex] = useState(null);
   const [btnName, setBtnName] = useState("View Case");
+
+    // Set initial activeIndex based on URL parameter
+  useEffect(() => {
+    if (id) {
+      // Find the index of the project with matching id
+      const projectIndex = projectsData.findIndex(
+        (project) => project.id === parseInt(id)
+      );
+      
+      if (projectIndex !== -1) {
+        setActiveIndex(projectIndex);
+      }
+    }
+  }, [id]); // Run when id changes
+
   // Throttle control
   const isScrolling = useRef(false);
 
@@ -31,7 +49,7 @@ function Projects() {
     [activeIndex, projectsData.length, expandedProjectIndex]
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("wheel", handleScroll, { passive: false });
     return () => window.removeEventListener("wheel", handleScroll);
   }, [handleScroll]);

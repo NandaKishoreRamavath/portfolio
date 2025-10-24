@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./serviceCard.css";
 
-import playBtn_active from "../../../assets/images/services/playBtn_active.webp";
-import primaryPlayBtn from "../../../assets/images/services/playbtnPrimary.webp";
+import playBtn_active from "../../../../assets/images/services/playBtn_active.webp";
+import primaryPlayBtn from "../../../../assets/images/services/playbtnPrimary.webp";
 
-function ServiceCard({ data, isActive, onActivate }) {
+function ServiceCard({ data, isActive, onActivate, projectId  }) {
 
   return (
     <section className={`service ${isActive ? "service_card_active" : ""}`} id="service">
@@ -20,13 +21,13 @@ function ServiceCard({ data, isActive, onActivate }) {
       </div>
       <div className="service_img">
         {data.mainVideo ? (
-    <video autoPlay loop muted playsInline>
-      <source src={data.mainVideo} type="video/webm" />
-      Your browser does not support the video tag.
-    </video>
-  ) : (
-    <img src={data.mainImg} alt="" />
-  )}
+          <video autoPlay loop muted playsInline>
+            <source src={data.mainVideo} type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <img src={data.mainImg} alt="" />
+        )}
       </div>
       <div className="service_content">
         <div className="service_content_inactive">
@@ -44,16 +45,16 @@ function ServiceCard({ data, isActive, onActivate }) {
           {data.tags.map((tag, idx) => (
             <li key={idx}>{tag}</li>
           ))}
-        </ul> 
+        </ul>
       </div>
       <div className="action_btn">
         <button onClick={onActivate} className="inactive_btn">
           <img src={primaryPlayBtn} alt="" id="primaryBtn" />
         </button>
-        <button className="active_btn">
+        <NavLink to={`/projects/${projectId}`} className="active_btn">
           <img src={playBtn_active} alt="" />
           <span>REVIEW</span>
-        </button>
+        </NavLink>
       </div>
     </section>
   );

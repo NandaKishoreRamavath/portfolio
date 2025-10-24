@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./services.css";
-import ServiceCard from "./ServiceCard";
+import ServiceCard from "./Service card/ServiceCard.jsx";
 import services from "../../../app data/services.js";
 
 import navBtn from "../../../assets/images/services/next_btn.webp";
@@ -50,6 +50,13 @@ const [translateX, setTranslateX] = useState(0);
       Math.max(prev - cardWidth, maxOffset)
     );
   };
+
+    // Map service categories to their first project ID
+  const categoryToProjectId = {
+    branding: 1,
+    web: 4,
+    "3d": 6
+  };
   return (
     <section className="services">
       <h2>What I Offer ?</h2>
@@ -63,6 +70,7 @@ const [translateX, setTranslateX] = useState(0);
             data={data}
             isActive={activeIndex === index}
             onActivate={() => setActiveIndex(index)}
+            projectId={categoryToProjectId[data.category]} // pass the project ID
           />
         ))}
       </div>

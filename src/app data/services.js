@@ -14,7 +14,8 @@ const data = {
         mainContext : "Memorable identities.",
         activeContextHeader : "Identity Systems",
         activeContext : "Creating distinctive, strategy-driven brands that cut through the noise and inspire loyalty.",
-        tags : ["Logotypes" , "Fonts" ,"2D"]
+        tags : ["Logotypes" , "Fonts" ,"2D"],
+        category : "branding"
     },
 
     WebService : {
@@ -26,7 +27,9 @@ const data = {
         mainContext : "Strategy-driven sites.",
         activeContextHeader : "Conversion Focused",
         activeContext : "Crafting fast, reliable websites optimized for user engagement, visibility, and growth.",
-        tags : ["Responsive" , "UI/UX" ,"SEO"]
+        tags : ["Responsive" , "UI/UX" ,"SEO"],
+        category : "web"
+        
     },
     illustrationService : {
         header : "3D MODELS",
@@ -37,7 +40,8 @@ const data = {
         mainContext : "Next-level creativity.",
         activeContextHeader : "Immersive Assets",
         activeContext : "Designing dynamic 3D models and illustrations that captivate attention and boost conversions.",
-        tags : ["Renders" , "Concepts"]
+        tags : ["Renders" , "Concepts"],
+        category : "3d"
     }
 }
 
