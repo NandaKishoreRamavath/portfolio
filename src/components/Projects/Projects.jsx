@@ -27,6 +27,10 @@ function Projects() {
     }
   }, [id]); // Run when id changes
 
+    // Touch tracking
+  const touchStartY = useRef(0);
+  const touchEndY = useRef(0);
+
   // Throttle control
   const isScrolling = useRef(false);
 
@@ -46,12 +50,53 @@ function Projects() {
         isScrolling.current = false;
       }, 2000); // Adjust delay to match your transition speed
     },
-    [activeIndex, projectsData.length, expandedProjectIndex]
+    [activeIndex, expandedProjectIndex]
   );
+  // Handle touch start
+  const handleTouchStart = (e) => {
+    touchStartY.current = e.touches[0].clientY;
+  };
 
+  // Handle touch end (swipe detection)
+  const handleTouchEnd = (e) => {
+    touchEndY.current = e.changedTouches[0].clientY;
+    handleSwipe();
+  };
+
+  // Detect swipe direction
+  const handleSwipe = () => {
+    if (isScrolling.current || expandedProjectIndex !== null) return;
+
+    const swipeThreshold = 50; // minimum distance to register as swipe
+    const difference = touchStartY.current - touchEndY.current;
+
+    // Swipe up (next project)
+    if (difference > swipeThreshold && activeIndex < projectsData.length - 1) {
+      setActiveIndex((idx) => idx + 1);
+      isScrolling.current = true;
+    }
+    // Swipe down (previous project)
+    else if (difference < -swipeThreshold && activeIndex > 0) {
+      setActiveIndex((idx) => idx - 1);
+      isScrolling.current = true;
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 2000);
+  };
+
+  // Attach event listeners
   useEffect(() => {
     window.addEventListener("wheel", handleScroll, { passive: false });
-    return () => window.removeEventListener("wheel", handleScroll);
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
+    };
   }, [handleScroll]);
 
   const toggleExpand = (idx) => {
