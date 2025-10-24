@@ -150,7 +150,7 @@ nav .menu {
 
 /* ------------------------------------------------------ */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 770px) {
   nav {
     padding: 1rem 1.5rem;
   }
@@ -158,10 +158,9 @@ nav .menu {
   nav h4 {
     font-size: var(--font24px);
   }
-  .menu {
+  /* .menu {
     height: 0;
-    /* width: 20%; */
-  }
+  } */
   .menu_slide {
     font-size: var(--font12px);
     padding: 0.5rem 0.75rem;
@@ -198,6 +197,7 @@ nav .menu {
   .disc_holder {
     padding: 0.15rem;
     border-radius: 0.5rem;
+    transform: scale(1.3);
   }
 
   .menu_slide {
@@ -208,6 +208,9 @@ nav .menu {
     width: 4px;
     height: 4px;
     border: 1.5px solid var(--cream);
+  }
+   .discs_active .disc_holder {
+    padding: 0.4rem;
   }
   .discs_active .disc_holder .circle {
     width: 8px;
