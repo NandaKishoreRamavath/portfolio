@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
       <nav>
-        <NavLink to ='/contact' className="project_btn">
+        <NavLink to ='contact' className="project_btn">
           <div className="btn">
             <h5>Start a project</h5>
             <hr />

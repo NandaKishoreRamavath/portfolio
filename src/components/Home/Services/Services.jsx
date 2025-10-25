@@ -77,6 +77,7 @@ const [translateX, setTranslateX] = useState(0);
       <div className="scroll_buttons">
         <button onClick={scrollLeft}><img src={navBtn} alt="" /></button>
         <button onClick={scrollRight}><img src={navBtn} alt="" /></button>
+
       </div>
     </section>
   );

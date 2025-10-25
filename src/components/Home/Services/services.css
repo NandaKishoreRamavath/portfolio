@@ -42,22 +42,25 @@
 }
 
 .scroll_buttons button {
+  position: relative;
+  z-index: 10;
   border: none;
   background: none;
   cursor: pointer;
-  transition: all 0.2s;
-  cursor: pointer;
-  
   border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 .scroll_buttons button img{
+  /* border: 1px solid; */
+    cursor: pointer;
   width: 3.5rem;
-  box-shadow: 1px 1px 8px rgba(0,0,0,0.6);
   border-radius: 50%;
 }
 
-.scroll_buttons button:nth-child(1) img{
+.scroll_buttons button:nth-child(1){
   transform: rotate(180deg);
 }
 
