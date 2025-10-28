@@ -1,14 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import { Helmet } from "react-helmet";
 
-import './App.css';
+import "./App.css";
 
-import Home from './components/Home/Home.jsx';
-import Projects from './components/Projects/Projects.jsx';
-import ProjectCard from './components/Projects/project card/ProjectCard.jsx'
-import Contact from './components/Contact/Contact.jsx';
+import Home from "./components/Home/Home.jsx";
+import Projects from "./components/Projects/Projects.jsx";
+import ProjectCard from "./components/Projects/project card/ProjectCard.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -32,9 +37,11 @@ function App() {
           name="keywords"
           content="Nanda Kishore, Nand Kishor, Nandakishor, Nanda Kishor, designer, React developer, portfolio, creative developer,"
         />
-        <link rel="canonical" href="https://https://nandakishore.onrender.com/" />
+        <link
+          rel="canonical"
+          href="https://https://nandakishore.onrender.com/"
+        />
         <meta name="robots" content="index, follow" />
-
 
         <script type="application/ld+json">
           {`
@@ -85,16 +92,28 @@ function App() {
                 "JAVA"
               ],
               "occupationLocation": {
-                "@type": "Place",
+                "@type": "Country",
                 "name": "India"
               }
+
             },
             "brand": {
               "@type": "Brand",
               "name": "Soft Matter",
               "url": "https://https://nandakishore.onrender.com/"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://https://nandakishore.onrender.com/#softmatter",
+            "name": "Soft Matter",
+            "url": "https://https://nandakishore.onrender.com/",
+            "logo": "https://https://nandakishore.onrender.com/images/SEO/logo.webp",
+            "founder": {
+              "@id": "https://https://nandakishore.onrender.com/#nandakishore"
             },
-            "serviceOffered": [
+            "description": "Soft Matter is the creative identity of Nanda Kishore — crafting intelligent brand identities, emotionally driven visuals, and high-performing websites that fuse art, design, and technology."
+             "serviceOffered": [
               {
                 "@type": "Service",
                 "name": "Website Design & Development",
@@ -111,42 +130,29 @@ function App() {
                 "description": "Designing digital and print assets that communicate brand personality and value."
               }
             ]
-          },
-          {
-            "@type": "Organization",
-            "@id": "https://https://nandakishore.onrender.com/#softmatter",
-            "name": "Soft Matter",
-            "url": "https://https://nandakishore.onrender.com/",
-            "logo": "https://https://nandakishore.onrender.com/images/SEO/logo.webp",
-            "founder": {
-              "@id": "https://https://nandakishore.onrender.com/#nandakishore"
-            },
-            "description": "Soft Matter is the creative identity of Nanda Kishore — crafting intelligent brand identities, emotionally driven visuals, and high-performing websites that fuse art, design, and technology."
           }
         ]
       }
     `}
         </script>
-
       </Helmet>
 
-      {isLoading && (
-        <div className="custom-loader">
-          Loading......
-        </div>
-      )}
+      {isLoading && <div className="custom-loader">Loading......</div>}
 
       <Router>
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={<Home onLoaded={() => setIsLoading(false)} />} />
-          <Route path='/projects' element={<Projects />} />
+          <Route
+            path="/"
+            element={<Home onLoaded={() => setIsLoading(false)} />}
+          />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<Projects />} />
-          <Route path='/contact' element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Router>
     </>
-  )
+  );
 }
 
 export default App;
