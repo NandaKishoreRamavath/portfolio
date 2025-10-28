@@ -16,10 +16,10 @@ a.project_btn{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* overflow: hidden; */
   transition: 100ms ease-in-out;
   cursor:pointer;
 }
+
 .project_btn h5 {
   font-family: var(--strongArm);
   font-weight: 400;

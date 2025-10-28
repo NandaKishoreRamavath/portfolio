@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 import "./Navbar.css";
 
+
+
 import arrow from "../../assets/images/hero/arrow.webp";
 
 function Navbar() {
@@ -12,15 +14,17 @@ function Navbar() {
   const onBtnMouseEnter = () => setHoveringBtn(true);
   const onBtnMouseLeave = () => setHoveringBtn(false);
 
+
   return (
       <nav>
-        <NavLink to ='contact' className="project_btn">
+        <NavLink to ='/contact' className="project_btn">
           <div className="btn">
             <h5>Start a project</h5>
             <hr />
           </div>
           <img src={arrow} alt="" />
         </NavLink>
+
         <h4>Soft Matter</h4>
         <div className={`menu ${active && !hoveringBtn ? 'menu_active' : ''}`}>
           <div className={`discs ${active ? 'discs_active' : ''}`} id="discs" onClick={() => setActive(!active)}

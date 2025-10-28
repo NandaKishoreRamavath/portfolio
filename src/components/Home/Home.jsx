@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import Hero from './Hero/Hero.jsx';
 import Marquee from './marquee/Marquee.jsx';
@@ -8,6 +8,7 @@ import Testimonials from './Testimonial/Testimonials.jsx';
 import Footer from '../Footer/Footer.jsx';
 
 function Home() {
+
   return (
     <>
         <Hero />

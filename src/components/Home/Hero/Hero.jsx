@@ -5,15 +5,18 @@ import "./Hero.css";
 
 import Navbar from "../../Navbar/Navbar.jsx";
 
+
 import heroImg from "../../../assets/images/hero/heroImg.png";
 import tagDiv from "../../../assets/images/hero/tagDiv.webp";
 import hireMeInner from "../../../assets/images/aboutMe/hire me inner.webp";
 import hireMeOuter from "../../../assets/images/aboutMe/hire me outer.webp";
 
-function Hero() {
+function Hero({contactBtn}) {
+
+   
   return (
     <section className="hero">
-      <Navbar />
+      <Navbar contactBtn = {contactBtn}/>
       <div className="hero_img">
         <img src={heroImg} alt="" id="heroImg" />
         <div className="hireMe">

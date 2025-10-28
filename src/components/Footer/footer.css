@@ -125,9 +125,7 @@ footer{
 }
 
 .footer_cntnt .nav li a:hover {
-  /* letter-spacing: 0.5px; */
   color: var(--darkGreen);
-  /* text-shadow: 2px 2px 4px rgba(0,0,0,0.5); */
 }
 .footer_cntnt .footer_info {
   font-family: var(--Outfit);

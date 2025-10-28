@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./footer.css";
 
@@ -31,7 +32,10 @@ function Footer() {
             <a href="" className="social_btn">
               <img src={fb} alt="" />
             </a>
-            <a href="https://www.reddit.com/user/Distinct-Station7063/" className="social_btn">
+            <a
+              href="https://www.reddit.com/user/Distinct-Station7063/"
+              className="social_btn"
+            >
               <img src={reddit} alt="" />
             </a>
             <a href="" className="social_btn">
@@ -45,13 +49,18 @@ function Footer() {
           </div>
           <ul className="nav">
             <li>
-              <a href="">HOME</a>
+              <NavLink
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                HOME
+              </NavLink>
             </li>
             <li>
-              <a href="">PROJECTS</a>
+              <NavLink to="/projects">PROJECTS</NavLink>
             </li>
             <li>
-              <a href="">CONTACT</a>
+              <NavLink to="/contact">CONTACT</NavLink>
             </li>
           </ul>
           <div className="footer_info">
@@ -66,7 +75,7 @@ function Footer() {
           <img src={footerBGMobile} alt="" id="footerBG" />
           <img src={illustration} alt="" id="footerIllustration" />
         </div>
-        
+
         <div className="social_holder">
           <h2>WHERE CAN U FIND ME?</h2>
           <div className="social_icons">
@@ -82,7 +91,10 @@ function Footer() {
             <a href="" className="social_btn">
               <img src={fb} alt="" />
             </a>
-            <a href="https://www.reddit.com/user/Distinct-Station7063/" className="social_btn">
+            <a
+              href="https://www.reddit.com/user/Distinct-Station7063/"
+              className="social_btn"
+            >
               <img src={reddit} alt="" />
             </a>
             <a href="" className="social_btn">
@@ -92,24 +104,31 @@ function Footer() {
         </div>
         <div className="footer_cntnt">
           <div className="logo">
-            <span>NANDA</span><br/> KISHORE
+            <span>NANDA</span>
+            <br /> KISHORE
           </div>
-        <div className="footer_cntnt_nav">   
-          <ul className="nav">
-            <li>
-              <a href="">HOME</a>
+          <div className="footer_cntnt_nav">
+            <ul className="nav">
+              <li>
+              <NavLink
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
+                HOME
+              </NavLink>
             </li>
             <li>
-              <a href="">PROJECTS</a>
+              <NavLink to="/projects">PROJECTS</NavLink>
             </li>
             <li>
-              <a href="">CONTACT</a>
+              <NavLink to="/contact">CONTACT</NavLink>
             </li>
-          </ul>
-          <div className="footer_info">
-            <p>2025 | Copy Rights</p>
-            <p>All Rights Reserved.</p>
-          </div></div>
+            </ul>
+            <div className="footer_info">
+              <p>2025 | Copy Rights</p>
+              <p>All Rights Reserved.</p>
+            </div>
+          </div>
         </div>
       </section>
     </footer>
