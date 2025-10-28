@@ -39,7 +39,7 @@ function App() {
         />
         <link
           rel="canonical"
-          href="https://https://nandakishore.onrender.com/"
+          href="https://nandakishore.onrender.com"
         />
         <meta name="robots" content="index, follow" />
 
@@ -50,17 +50,17 @@ function App() {
         "@graph": [
           {
             "@type": "Person",
-            "@id": "https://https://nandakishore.onrender.com/#nandakishore",
+            "@id": "https://nandakishore.onrender.com#nandakishore",
             "name": "Nanda Kishore",
             "alternateName": ["Nand Kishor", "Nanda Kishor", "Nandakishor"],
             "jobTitle": "Creative Designer & Full-Stack Web Developer",
-            "url": "https://https://nandakishore.onrender.com/",
-            "image": "https://https://nandakishore.onrender.com/images/SEO/heroImg.webp",
+            "url": "https://nandakishore.onrender.com",
+            "image": "https://nandakishore.onrender.comimages/SEO/heroImg.webp",
             "description": "Expert freelance creative designer and full-stack web developer delivering functional, high-performing, and visually exceptional websites that connect design, identity, and technology.",
             "worksFor": {
               "@type": "Organization",
               "name": "Soft Matter",
-              "url": "https://https://nandakishore.onrender.com/"
+              "url": "https://nandakishore.onrender.com"
             },
             "sameAs": [
               "https://www.linkedin.com/in/nandakishore",
@@ -99,39 +99,48 @@ function App() {
             "brand": {
               "@type": "Brand",
               "name": "Soft Matter",
-              "url": "https://https://nandakishore.onrender.com/"
+              "url": "https://nandakishore.onrender.com"
             }
           },
           {
-            "@type": "Organization",
-            "@id": "https://https://nandakishore.onrender.com/#softmatter",
-            "name": "Soft Matter",
-            "url": "https://https://nandakishore.onrender.com/",
-            "logo": "https://https://nandakishore.onrender.com/images/SEO/logo.webp",
-            "founder": {
-              "@id": "https://https://nandakishore.onrender.com/#nandakishore"
-            },
-            "description": "Soft Matter is the creative identity of Nanda Kishore — crafting intelligent brand identities, emotionally driven visuals, and high-performing websites that fuse art, design, and technology.",
-               "serviceOffered": [
-              {
-                "@type": "Service",
-                "name": "Website Design & Development",
-                "description": "Designing and building functional, high-impact websites using MERN stack and modern UI/UX principles."
-              },
-              {
-                "@type": "Service",
-                "name": "Brand Identity & Creative Direction",
-                "description": "Building distinctive, emotionally resonant visual identities and brand systems."
-              },
-              {
-                "@type": "Service",
-                "name": "Graphic Design & Marketing Assets",
-                "description": "Designing digital and print assets that communicate brand personality and value."
-              }
-            ]
-          }
-        ]
+  "@type": "Organization",
+  "@id": "https://nandakishore.onrender.com#softmatter",
+  "name": "Soft Matter",
+  "url": "https://nandakishore.onrender.com",
+  "logo": "https://nandakishore.onrender.com/assets/logo.png",
+  "description": "Soft Matter is a creative design and web studio by Nanda Kishore, delivering full-stack websites, branding, and design experiences.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Creative Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Brand Identity & Design",
+          "description": "Logo design, visual identity systems, and brand storytelling."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Website Design & Development",
+          "description": "Modern, responsive, full-stack websites powered by the MERN stack."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Social Media & Creative Strategy",
+          "description": "Content design and strategy to elevate digital presence."
+        }
       }
+    ]
+  }
+}
+
     `}
         </script>
       </Helmet>
