@@ -95,7 +95,6 @@ function App() {
                 "@type": "Country",
                 "name": "India"
               }
-
             },
             "brand": {
               "@type": "Brand",
@@ -113,7 +112,7 @@ function App() {
               "@id": "https://https://nandakishore.onrender.com/#nandakishore"
             },
             "description": "Soft Matter is the creative identity of Nanda Kishore — crafting intelligent brand identities, emotionally driven visuals, and high-performing websites that fuse art, design, and technology."
-             "serviceOffered": [
+               "serviceOffered": [
               {
                 "@type": "Service",
                 "name": "Website Design & Development",
