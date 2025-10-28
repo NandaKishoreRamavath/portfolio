@@ -79,7 +79,7 @@ footer{
   transform: scale(1.1);
 }
 .social_btn:hover::after {
-  transform: scaleY(1) translate(-2%, -1.6%) scaleY(1);
+  transform: scaleY(1) translate(-2%, -1.6%) ;
 }
 
 /* --------------------------------------- */
@@ -365,6 +365,9 @@ footer{
   width: 4rem;
 }
 
+  .social_btn:hover::after {
+  transform: scaleY(0) translate(-2%, -1.6%) ;
+}
 }
 
 @media screen and (max-width: 465px) {

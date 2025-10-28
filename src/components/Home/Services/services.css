@@ -50,7 +50,7 @@
   border-radius: 50%;
   width: 3.5rem;
   height: 3.5rem;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+  
 }
 
 .scroll_buttons button img{
@@ -58,6 +58,7 @@
     cursor: pointer;
   width: 3.5rem;
   border-radius: 50%;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 .scroll_buttons button:nth-child(1){
