@@ -106,6 +106,39 @@
     /* padding: 2rem; */
 }
 
+/* ----------------------------------------------- */
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  color: var(--darkGreen);
+  font-family: var(--strongArm);
+  font-size: var(--font28px);
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-align: center;
+  gap: 1rem;
+}
+.progress-bar {
+  width: 60%;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--cream);
+  transition: width 0.4s ease-in-out;
+}
+.loader p{
+  font-family: var(--Tomorrow);
+  font-weight: 500;
+}
 /* ------------------------------------------ */
 
 @media screen and (max-width: 850px) {
@@ -158,6 +191,10 @@
 .exitBtn {
   transform: scale(0.6);
   margin: 0.75rem 0.5rem;
+}
+.loader {
+  font-size: var(--font16px);
+  letter-spacing: 0.5px;
 }
 }
 

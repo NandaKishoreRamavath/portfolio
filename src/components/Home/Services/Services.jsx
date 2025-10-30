@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import "./services.css";
 import ServiceCard from "./Service card/ServiceCard.jsx";
-import services from "../../../app data/services.js";
+import services from "../../../app_data/services.js";
 
 import navBtn from "../../../assets/images/services/next_btn.webp";
 
@@ -75,8 +75,8 @@ const [translateX, setTranslateX] = useState(0);
         ))}
       </div>
       <div className="scroll_buttons">
-        <button onClick={scrollLeft}><img src={navBtn} alt="" /></button>
-        <button onClick={scrollRight}><img src={navBtn} alt="" /></button>
+        <button onClick={scrollLeft}><img src={navBtn} alt="Scroll services by Soft Matter to left" /></button>
+        <button onClick={scrollRight}><img src={navBtn} alt="Scroll services by Soft Matter to right" /></button>
 
       </div>
     </section>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import "./testimonial.css";
-import testimonials from "../../../app data/testimonials";
+import testimonials from "../../../app_data/testimonials.js";
 
 function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,16 +22,18 @@ function Testimonials() {
           <div
             className={`tm_holder ${idx === currentIndex ? "tm_active" : ""}`}
             id="tm_holder"
+            itemScope
+      itemType="https://schema.org/Review"
           >
             <div className="review_section">
-              <h3>{data.name}</h3>
-              <p>{data.quote}</p>
+              <h3 itemProp="author">{data.name}</h3>
+              <p itemProp="reviewBody">{data.quote}</p>
             </div>
             <div className="emoji">
-              <img src={data.emoji} alt="" />
+              <img src={data.emoji} alt={`${data.name}'s reaction`} />
             </div>
             <div className="profile_section">
-              <img src={data.img} alt="" />
+              <img src={data.img} alt={`${data.name}'s profile`} loading="lazy" />
             </div>
           </div>
           <div className={`tags ${idx === currentIndex ? "tags_active" : ""}`} >
@@ -40,10 +42,17 @@ function Testimonials() {
                 {tag}
               </span>
             ))}
-            <img src={data.poster} alt="" className="tag tagImg" />
+            <img src={data.asset} alt={`Nanda Kishore from softmatter provides ${data.tags[2]} services`} className="tag tagImg" />
           </div>
         </div>
       ))}
+
+      <div className="hover_hint">
+        <span>hover</span>
+        <div className="hover_circle">
+          <div className="inner_circle"></div>
+        </div>
+      </div>
     </section>
   );
 }

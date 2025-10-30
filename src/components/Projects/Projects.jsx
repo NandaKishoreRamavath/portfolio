@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import "./projects.css";
-import projectsData from "../../app data/projects.js";
+import projectsData from "../../app_data/projects.js";
 import ProjectCard from "./project card/ProjectCard.jsx";
 import ProjectStudy from "./project study/ProjectStudy.jsx";
 

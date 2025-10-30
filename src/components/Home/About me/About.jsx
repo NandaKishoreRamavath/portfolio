@@ -14,30 +14,58 @@ function About() {
           <h2>About Me</h2>
           <div className="abt_dicript_content">
             <p>
-            I’m a designer who loves visuals that pop and a developer who enjoys
-            making them work like magic. From posters that grab attention to
-            full-stack web apps that run smooth, I mix creativity with solid
-            tech skills to build things people actually remember. I like
-            projects that push me to learn more, experiment more, and deliver
-            something better than expected.
-          </p>
-          <ul>
-            <li>Birthday : <span>Aprill 11 2003</span></li>
-            <li>Age : <span>22</span></li>
-            <li>City : <span>Viziangaram, AP</span></li>
-            <li>Degree : <span>Bachelors In Computer Science</span></li>
-          </ul>
-          <button id="resumeBtn" onClick={() => window.open('/Resume_NandaKishoreRamavath.pdf', '_blank')}>Resume</button>
+              I’m a designer who loves visuals that pop and a developer who
+              enjoys making them work like magic. From posters that grab
+              attention to full-stack web apps that run smooth, I mix creativity
+              with solid tech skills to build things people actually remember. I
+              like projects that push me to learn more, experiment more, and
+              deliver something better than expected.
+            </p>
+            <ul>
+              <li>
+                Birthday : <span>Aprill 11 2003</span>
+              </li>
+              <li>
+                Age : <span>22</span>
+              </li>
+              <li>
+                City : <span>Viziangaram, AP</span>
+              </li>
+              <li>
+                Degree : <span>Bachelors In Computer Science</span>
+              </li>
+            </ul>
+            <button
+              id="resumeBtn"
+              onClick={() =>
+                window.open("/Resume_NandaKishoreRamavath.pdf", "_blank")
+              }
+            >
+              Resume
+            </button>
           </div>
         </div>
         <div className="img_holder">
-          <img src={abtMeImg} alt="" id="abtMeImg"/>
+          <img
+            src={abtMeImg}
+            alt="Portrait of Nanda Kishore, creative designer and full-stack developer at Soft Matter"
+            id="abtMeImg"
+            loading="lazy"
+            decoding="async"
+          />
           <div className="hireMe">
-            <img src={hireMeInner} alt="hire freelance graphoic designer" />
+            <img
+              src={hireMeInner}
+              alt="hire freelance graphic designer"
+              loading="lazy"
+              decoding="async"
+            />
             <img
               src={hireMeOuter}
               alt="hire freelance web developer"
               id="hireMeOuter"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="about_tags">

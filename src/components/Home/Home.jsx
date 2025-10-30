@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 
 import Hero from './Hero/Hero.jsx';
 import Marquee from './marquee/Marquee.jsx';
@@ -7,12 +7,7 @@ import Services from './Services/Services.jsx';
 import Testimonials from './Testimonial/Testimonials.jsx';
 import Footer from '../Footer/Footer.jsx';
 
-function Home({ onLoaded }) {
-  useEffect(() => {
-    // If you want just initial render
-    onLoaded();
-  }, [onLoaded]);
-
+function Home() {
   return (
     <>
         <Hero />

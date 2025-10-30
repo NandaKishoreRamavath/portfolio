@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -10,10 +10,9 @@ import { Helmet } from "react-helmet";
 
 import "./App.css";
 
-import Home from "./components/Home/Home.jsx";
-import Projects from "./components/Projects/Projects.jsx";
-import ProjectCard from "./components/Projects/project card/ProjectCard.jsx";
-import Contact from "./components/Contact/Contact.jsx";
+const Home = lazy(() => import("./components/Home/Home"));
+const Projects = lazy(() => import("./components/Projects/Projects"));
+const Contact = lazy(() => import("./components/Contact/Contact"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,7 +23,10 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    import("./components/Projects/Projects");
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -37,14 +39,12 @@ function App() {
           name="keywords"
           content="Nanda Kishore, Nand Kishor, Nandakishor, Nanda Kishor, designer, React developer, portfolio, creative developer,"
         />
-        <link
-          rel="canonical"
-          href="https://nandakishore.onrender.com"
-        />
+        <link rel="canonical" href="https://nandakishore.onrender.com" />
+
         <meta name="robots" content="index, follow" />
 
         <script type="application/ld+json">
-{`
+          {`
 {
   "@context": "https://schema.org",
   "@graph": [
@@ -56,7 +56,7 @@ function App() {
       "jobTitle": "Creative Designer & Full-Stack Web Developer",
       "url": "https://nandakishore.onrender.com",
       "image": "https://nandakishore.onrender.com/images/SEO/heroImg.webp",
-      "description": "Expert freelance creative designer and full-stack web developer delivering functional, high-performing, and visually exceptional websites that connect design, identity, and technology.",
+      "description": "Expert freelance creative designer and full-stack web developer at Soft Matter, delivering functional, high-performing, and visually exceptional websites that connect design, identity, and technology.",
       "worksFor": {
         "@type": "Organization",
         "@id": "https://nandakishore.onrender.com#softmatter"
@@ -142,23 +142,19 @@ function App() {
   ]
 }
 `}
-</script>
-
+        </script>
       </Helmet>
-
-      {isLoading && <div className="custom-loader">Loading......</div>}
 
       <Router>
         <ScrollToTop />
-        <Routes>
-          <Route
-            path="/"
-            element={<Home onLoaded={() => setIsLoading(false)} />}
-          />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Suspense fallback={<div className="custom-loader">Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:id" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </Suspense>
       </Router>
     </>
   );

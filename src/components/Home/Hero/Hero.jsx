@@ -5,23 +5,37 @@ import "./Hero.css";
 
 import Navbar from "../../Navbar/Navbar.jsx";
 
-
-import heroImg from "../../../assets/images/hero/heroImg.png";
 import tagDiv from "../../../assets/images/hero/tagDiv.webp";
 import hireMeInner from "../../../assets/images/aboutMe/hire me inner.webp";
 import hireMeOuter from "../../../assets/images/aboutMe/hire me outer.webp";
 
-function Hero({contactBtn}) {
-
-   
+function Hero({ contactBtn }) {
   return (
     <section className="hero">
-      <Navbar contactBtn = {contactBtn}/>
+      <Navbar contactBtn={contactBtn} />
       <div className="hero_img">
-        <img src={heroImg} alt="" id="heroImg" />
+        <img
+          src="/images/hero/NandaKishore.webp"
+          alt="Nanda Kishore Ramavath - Creative Designer and Full Stack Web Developer"
+          id="heroImg"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+        />
         <div className="hireMe">
-          <img src={hireMeInner} alt="hire freelance graphoic designer" />
-          <img src={hireMeOuter} alt="hire freelance web developer" id="hireMeOuter" />
+          <img
+            src={hireMeInner}
+            alt="hire freelance graphic designer"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src={hireMeOuter}
+            alt="hire freelance web developer"
+            id="hireMeOuter"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 
@@ -47,7 +61,10 @@ function Hero({contactBtn}) {
               Helping brands grow with visuals that connect and code that
               delivers.
             </p>
-            <img src={tagDiv} alt="" />
+            <img src={tagDiv} alt="Nanda Kishore — freelance designer & web developer at Soft Matter, India"
+  loading="lazy"
+  decoding="async"
+ />
           </div>
         </div>
       </div>

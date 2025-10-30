@@ -51,6 +51,7 @@
   width: 12rem;
   z-index: 1;
   animation: 5s ease-in-out infinite rotate;
+  will-change: transform;
 }
 
 @keyframes rotate {
