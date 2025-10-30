@@ -327,7 +327,6 @@ footer{
   }
   .footer_cntnt_nav .footer_info {
     font-size: 0.5rem;
-    /* width: 40%; */
   }
   .social_holder{
     position: absolute;
@@ -406,4 +405,12 @@ footer{
   .social_btn img {
   width: 3rem;
 }
+.footer_cntnt_nav .footer_info {
+    width: 45%;
+    margin-right: -1.5rem;
+    
+  }
+    .footer_cntnt_nav{
+    gap: 1rem;
+  }
 }

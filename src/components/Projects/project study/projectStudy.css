@@ -113,12 +113,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 25vh;
   color: var(--darkGreen);
-  font-family: var(--strongArm);
+  font-family: var(--strongBox);
   font-size: var(--font28px);
   letter-spacing: 1px;
-  font-weight: 400;
   text-align: center;
   gap: 1rem;
 }
@@ -134,6 +133,9 @@
   height: 100%;
   background-color: var(--cream);
   transition: width 0.4s ease-in-out;
+}
+.loader h4{
+  font-weight: 500;
 }
 .loader p{
   font-family: var(--Tomorrow);
