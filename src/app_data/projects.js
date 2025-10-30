@@ -1,16 +1,18 @@
- import bigBopening from "../assets/images/projects/bigB_home.png";
+ import bigBopening from "../assets/images/projects/bigB_home.webp";
  import bigBitem1 from "../assets/images/projects/bigB_showcase.png";
  import bigBitem2 from "../assets/images/projects/BigB_logo_breakdown.png";
  import bigBitem3 from "../assets/images/projects/jersey_showcase.png";
  import bigBitem4 from "../assets/images/projects/posters.svg";
- import sctopening from "../assets/images/projects/sct_home.png";
+ import sctopening from "../assets/images/projects/sct_home.webp";
  import sctitem from "../assets/images/projects/sky_civil_tech.svg";
- import asdopening from "../assets/images/projects/agro_drone_aspirants_home.png";
+ import asdopening from "../assets/images/projects/agro_drone_aspirants_home.webp";
  import asditem1 from "../assets/images/projects/agrosky_drone_showcase.svg";
  import asditem2 from "../assets/images/projects/agrosky_drone_showcase_page2.svg";
  import asditem3 from "../assets/images/projects/agrosky_drone_showcase_page3.svg";
- import CEopening from "../assets/images/projects/CE_home.png";
-import explorationitem from "../assets/images/projects/others.svg"
+ import CEopening from "../assets/images/projects/CE_home.webp";
+import explorationitem from "../assets/images/projects/others.svg";
+import togglOpening from "../assets/images/projects/toggl_home.webp";
+import togglitem from "../assets/images/projects/toggl_showcase.gif";
 
  
  
@@ -52,6 +54,15 @@ import explorationitem from "../assets/images/projects/others.svg"
       desc: "Redefining Agri-Tech Through Design & Development\nAgroSky Drone Aspirant pioneers smart agriculture with UAV solutions for precision farming, surveillance, and emergency response. The website redesign transforms their technical innovation into an elegant, credible digital experience.\n\nThe Challenge\nThe existing site lacked clarity and modern functionality — cluttered navigation and weak hierarchy failed to communicate the brand's cutting-edge capabilities. The brief was to revamp while preserving AgroSky's identity, then elevate it with sophistication and seamless performance.\n\nDesign Approach\nDeep maroon and earthy cream reflect agricultural roots and modern innovation. Clean layouts, strategic white space, and bold imagery create hierarchy that guides users through complex offerings without overwhelming them. High-quality visuals paired with concise descriptions build trust, while icons and infographics translate technical data into digestible insights.\n\nDevelopment\nBuilt on the MERN stack for performance and scalability, the site delivers smooth navigation, fast load times, and full responsiveness across devices. Dynamic product filtering, intuitive service sections, and strategic CTAs drive engagement while maintaining visual integrity from desktop to mobile.\n\nOutcome\nThe revamped platform positions AgroSky as a future-ready agri-tech leader — blending credibility with accessibility. It's a digital experience that informs, inspires confidence, and drives meaningful engagement with farmers, partners, and stakeholders.",
       showcase : [asditem1, asditem2,asditem3]
     },
+   {
+  id: 5,
+  openingImage: togglOpening,
+  projectName: "Toggl Track Clone",
+  projectClass: "Web Design",
+  projectClass_span: "&development",
+  desc: "The Toggl interface recreation project was an exploration in precision design, interaction, and user experience replication. The goal was to rebuild the landing page of a modern SaaS brand using only front-end technologies — focusing on visual hierarchy, responsive structure, and motion fluidity.\n\nEvery component — from the navigation bar to the hero animation — was designed and coded from scratch, ensuring pixel-level accuracy while maintaining optimized performance and accessibility. The build emphasizes the balance between clarity and personality — a hallmark of great product marketing websites.\n\nThis exercise deepened understanding of UI consistency, layout scalability, and performance tuning — proving how effective design and clean implementation can coexist even in visually dense interfaces.\n\nOutcome:\nA polished, responsive clone that captures the feel and flow of a professional SaaS landing experience, built entirely with modern front-end practices.",
+  showcase: [togglitem],
+}
     // Add more ProjectCard components as needed
   ];
 

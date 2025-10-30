@@ -8,29 +8,69 @@ function ProjectStudy({ project, onClose, htmlId }) {
     const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
-   useEffect(() => {
-    let loaded = 0;
-    const imageElements = project.showcase.map((src) => {
-      const img = new Image();
-      img.src = src;
-      return img;
-    });
-
-    const loadAll = async () => {
-      for (const img of imageElements) {
-        try {
-          await img.decode(); // ✅ waits until browser decodes and paints
-          loaded++;
-          setProgress(Math.round((loaded / imageElements.length) * 100));
-        } catch (e) {
-          console.warn("Image failed to decode:", img.src, e);
-        }
-      }
+    useEffect(() => {
+    const files = project.showcase || [];
+    if (files.length === 0) {
       setIsLoading(false);
+      return;
+    }
+
+    let totalBytes = 0;
+    let loadedBytes = 0;
+
+    const fetchImageWithProgress = (src) => {
+      return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", src, true);
+        xhr.responseType = "blob";
+
+        xhr.onprogress = (event) => {
+          if (event.lengthComputable) {
+            // update overall progress
+            const diff = event.loaded - (xhr._lastLoaded || 0);
+            xhr._lastLoaded = event.loaded;
+            loadedBytes += diff;
+            setProgress(Math.round((loadedBytes / totalBytes) * 100));
+          }
+        };
+
+        xhr.onload = () => {
+          if (xhr.status === 200) {
+            resolve(URL.createObjectURL(xhr.response)); // return blob URL
+          } else {
+            reject(new Error("Failed to load " + src));
+          }
+        };
+
+        xhr.onerror = () => reject(new Error("Network error"));
+        xhr.send();
+      });
     };
 
-    loadAll();
-  }, [project.showcase]);
+    // 1️⃣ First, get all file sizes in parallel
+    Promise.all(
+      files.map((src) =>
+        fetch(src, { method: "HEAD" })
+          .then((res) => parseInt(res.headers.get("content-length") || 0))
+          .catch(() => 0)
+      )
+    ).then((sizes) => {
+      totalBytes = sizes.reduce((sum, s) => sum + s, 0) || 1; // avoid /0
+
+      // 2️⃣ Now actually fetch all images (with progress)
+      Promise.all(files.map(fetchImageWithProgress))
+        .then((blobUrls) => {
+          // replace project.showcase with local blob URLs
+          project._loadedShowcase = blobUrls;
+          setProgress(100);
+          setTimeout(() => setIsLoading(false), 300);
+        })
+        .catch((err) => {
+          console.error("Error loading images:", err);
+          setIsLoading(false);
+        });
+    });
+  }, [project]);
 
   return (
     <section

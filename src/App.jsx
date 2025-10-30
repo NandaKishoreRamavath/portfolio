@@ -6,7 +6,6 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import { KeepAlive } from "react-activation";
 import { Helmet } from "react-helmet";
 
 import "./App.css";
@@ -23,8 +22,49 @@ function ScrollToTop() {
   return null;
 }
 
+function AppContent() {
+  return (
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense
+              fallback={<div className="custom-loader">Loading home…</div>}
+            >
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <Suspense
+              fallback={<div className="custom-loader">Loading projects…</div>}
+            >
+              <Projects />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/projects/:id"
+          element={
+            <Suspense
+              fallback={<div className="custom-loader">Loading projects…</div>}
+            >
+              <Projects />
+            </Suspense>
+          }
+        />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </>
+  );
+}
 function App() {
   useEffect(() => {
+    import("./components/Home/Home");
     import("./components/Projects/Projects");
   }, []);
 
@@ -145,24 +185,8 @@ function App() {
 `}
         </script>
       </Helmet>
-
       <Router>
-        <ScrollToTop />
-        <Suspense fallback={<div className="custom-loader">Loading...</div>}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <KeepAlive when={true}>
-                  <Home />
-                </KeepAlive>
-              }
-            />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/:id" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Suspense>
+        <AppContent />
       </Router>
     </>
   );
