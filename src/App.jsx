@@ -6,6 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
+import { KeepAlive } from "react-activation";
 import { Helmet } from "react-helmet";
 
 import "./App.css";
@@ -149,7 +150,14 @@ function App() {
         <ScrollToTop />
         <Suspense fallback={<div className="custom-loader">Loading...</div>}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <KeepAlive when={true}>
+                  <Home />
+                </KeepAlive>
+              }
+            />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
