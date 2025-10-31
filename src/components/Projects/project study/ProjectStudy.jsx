@@ -95,7 +95,7 @@ function ProjectStudy({ project, onClose, htmlId }) {
       </div>
       <div className="content_showcase"  itemProp="image" itemScope itemType="https://schema.org/ImageGallery">
         {isLoading ? (
-          <div className="loader">
+          <div className="project_study_loader">
             <h4>Loading high-quality project files...</h4>
              <div className="progress-bar">
               <div className="progress" style={{ width: `${progress}%` }}></div>
