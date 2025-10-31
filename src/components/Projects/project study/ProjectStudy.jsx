@@ -103,16 +103,34 @@ function ProjectStudy({ project, onClose, htmlId }) {
             <p>{progress}%</p>
           </div>
         ) : (
-          project.showcase.map((img, idx) => {
-          return (
-            <figure className="showcase_items" key={idx}>
-              <img src={img} alt={`${project.projectName} showcase design ${idx + 1} by Soft Matter`}
-              loading="lazy"
-              decoding="async"
-              itemProp="image"/>
-            </figure>
-          );
-        }))}
+          project.showcase.map((media, idx) => {
+  const isVideo = /\.(mp4|webm|ogg|mkv)$/i.test(media);
+
+  return (
+    <figure className="showcase_items" key={idx}>
+      {isVideo ? (
+        <video autoPlay loop muted
+          src={media}
+          controls
+          playsInline
+          preload="metadata"
+          itemProp="video"
+          aria-label={`${project.projectName} showcase video ${idx + 1} by Soft Matter`}
+        >
+          Sorry, your browser doesn’t support embedded videos.
+        </video>
+      ) : (
+        <img
+          src={media}
+          alt={`${project.projectName} showcase design ${idx + 1} by Soft Matter`}
+          loading="lazy"
+          decoding="async"
+          itemProp="image"
+        />
+      )}
+    </figure>
+  );
+}))}
       </div>
     </section>
   );

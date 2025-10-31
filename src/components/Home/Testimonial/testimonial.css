@@ -415,3 +415,11 @@
     width: 9rem;
   }
 }
+@media screen and (max-width: 380px) {
+.tag3 {
+    left: 1.5rem;
+  }
+  .tagImg {
+    right: 1.5rem;
+  }
+}

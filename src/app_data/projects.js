@@ -1,19 +1,25 @@
- import bigBopening from "../assets/images/projects/bigB_home.webp";
- import bigBitem1 from "../assets/images/projects/bigB_showcase.png";
- import bigBitem2 from "../assets/images/projects/BigB_logo_breakdown.png";
- import bigBitem3 from "../assets/images/projects/jersey_showcase.png";
- import bigBitem4 from "../assets/images/projects/posters.svg";
- import sctopening from "../assets/images/projects/sct_home.webp";
+ import bigBopening from "../assets/images/projects/home/bigB_home.webp";
+ import bigBitem1 from "../assets/images/projects/showcase/bigB/bigB_showcase.webp";
+ import bigBitem2 from "../assets/images/projects/showcase/bigB/bigB_showcase2.webp";
+ import bigBitem3 from "../assets/images/projects/showcase/bigB/bigB_showcase3.webp";
+ import bigBitem4 from "../assets/images/projects/showcase/bigB/bigB_showcase4.webp";
+ import sctopening from "../assets/images/projects/home/sct_home.webp";
  import sctitem from "../assets/images/projects/sky_civil_tech.svg";
- import asdopening from "../assets/images/projects/agro_drone_aspirants_home.webp";
+ import asdopening from "../assets/images/projects/home/agro_drone_aspirants_home.webp";
  import asditem1 from "../assets/images/projects/agrosky_drone_showcase.svg";
  import asditem2 from "../assets/images/projects/agrosky_drone_showcase_page2.svg";
  import asditem3 from "../assets/images/projects/agrosky_drone_showcase_page3.svg";
- import CEopening from "../assets/images/projects/CE_home.webp";
+ import CEopening from "../assets/images/projects/home/CE_home.webp";
 import explorationitem from "../assets/images/projects/others.svg";
-import togglOpening from "../assets/images/projects/toggl_home.webp";
+import togglOpening from "../assets/images/projects/home/toggl_home.webp";
 import togglitem from "../assets/images/projects/toggl_showcase.gif";
-
+import donutOpening from "../assets/images/projects/home/donut_home.webp";
+import donutItem1 from "../assets/images/projects/showcase/donut/donut_showcase.webm";
+import donutItem2 from "../assets/images/projects/showcase/donut/donut_showcase2.svg";
+import donutItem3 from "../assets/images/projects/showcase/donut/donut_showcase3.webm";
+import chairOpening from "../assets/images/projects/home/chairs_home.webp";
+import chairItem1 from "../assets/images/projects/showcase/chairs/wood_chair.png";
+import chairItem2 from "../assets/images/projects/showcase/chairs/couch_chair.webm";
  
  
  
@@ -62,6 +68,24 @@ import togglitem from "../assets/images/projects/toggl_showcase.gif";
   projectClass_span: "&development",
   desc: "The Toggl interface recreation project was an exploration in precision design, interaction, and user experience replication. The goal was to rebuild the landing page of a modern SaaS brand using only front-end technologies — focusing on visual hierarchy, responsive structure, and motion fluidity.\n\nEvery component — from the navigation bar to the hero animation — was designed and coded from scratch, ensuring pixel-level accuracy while maintaining optimized performance and accessibility. The build emphasizes the balance between clarity and personality — a hallmark of great product marketing websites.\n\nThis exercise deepened understanding of UI consistency, layout scalability, and performance tuning — proving how effective design and clean implementation can coexist even in visually dense interfaces.\n\nOutcome:\nA polished, responsive clone that captures the feel and flow of a professional SaaS landing experience, built entirely with modern front-end practices.",
   showcase: [togglitem],
+},
+   {
+  id: 6,
+  openingImage: donutOpening,
+  projectName: "Origin: Donut",
+  projectClass: "3D models",
+  projectClass_span: "&illustrations",
+  desc: "The Toggl interface recreation project was an exploration in precision design, interaction, and user experience replication. The goal was to rebuild the landing page of a modern SaaS brand using only front-end technologies — focusing on visual hierarchy, responsive structure, and motion fluidity.\n\nEvery component — from the navigation bar to the hero animation — was designed and coded from scratch, ensuring pixel-level accuracy while maintaining optimized performance and accessibility. The build emphasizes the balance between clarity and personality — a hallmark of great product marketing websites.\n\nThis exercise deepened understanding of UI consistency, layout scalability, and performance tuning — proving how effective design and clean implementation can coexist even in visually dense interfaces.\n\nOutcome:\nA polished, responsive clone that captures the feel and flow of a professional SaaS landing experience, built entirely with modern front-end practices.",
+  showcase: [donutItem1, donutItem2, donutItem3],
+},
+ {
+  id: 7,
+  openingImage: chairOpening, 
+  projectName: "The Chair Study",
+  projectClass: "3D models",
+  projectClass_span: "&illustrations",
+  desc: "This project started out simple — I just wanted to create a clean, realistic chair. But the more I worked on it, the more I got obsessed with the small stuff — how light wraps around wood, how surface roughness changes the mood, how tiny shadows define shape.\n\nThe wooden chair was a pure studio setup — I wanted it to feel like a real product shot, something you could almost touch. Every edge, grain, and reflection was carefully balanced until it felt right.\n\nThen came the couch. I wanted to go beyond just modeling — so I threw it into a real-world scene, blending 3D with actual footage. It was my first try at matching lighting, color tone, and shadows with VFX, and it honestly taught me more than any tutorial ever could.\n\nWhat started as a random experiment turned into something bigger — a reminder that design isn’t just about creating what looks good, it’s about learning how every detail comes together to make it feel real.",
+  showcase: [chairItem1, chairItem2] 
 }
     // Add more ProjectCard components as needed
   ];

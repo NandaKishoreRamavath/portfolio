@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 import "./about.css";
 
@@ -53,7 +54,7 @@ function About() {
             loading="lazy"
             decoding="async"
           />
-          <div className="hireMe">
+          <NavLink to='/contact' className="hireMe">
             <img
               src={hireMeInner}
               alt="hire freelance graphic designer"
@@ -67,7 +68,7 @@ function About() {
               loading="lazy"
               decoding="async"
             />
-          </div>
+          </NavLink>
           <div className="about_tags">
             <span className="tag tag1">APRIL 11, 2003</span>
             <span className="tag tag2">AP, INDIA</span>
