@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 
 import "./App.css";
 
+import Loader from  "./components/loading_page/Loader.jsx";
 const Home = lazy(() => import("./components/Home/Home"));
 const Projects = lazy(() => import("./components/Projects/Projects"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
@@ -31,7 +32,7 @@ function AppContent() {
           path="/"
           element={
             <Suspense
-              fallback={<div className="custom-loader">Loading home…</div>}
+              fallback={<Loader loaderSection = "home"/>}
             >
               <Home />
             </Suspense>
@@ -41,7 +42,7 @@ function AppContent() {
           path="/projects"
           element={
             <Suspense
-              fallback={<div className="custom-loader">Loading projects…</div>}
+              fallback={<Loader loaderSection = "projects"/>}
             >
               <Projects />
             </Suspense>
@@ -51,7 +52,7 @@ function AppContent() {
           path="/projects/:id"
           element={
             <Suspense
-              fallback={<div className="custom-loader">Loading projects…</div>}
+              fallback={<Loader loaderSection = "projects"/>}
             >
               <Projects />
             </Suspense>
@@ -80,7 +81,7 @@ function App() {
           name="keywords"
           content="Nanda Kishore, Nand Kishor, Nandakishor, Nanda Kishor, designer, React developer, portfolio, creative developer,"
         />
-        <link rel="canonical" href="https://nandakishore.onrender.com" />
+        <link rel="canonical" href="https://nandakishore.in" />
 
         <meta name="robots" content="index, follow" />
 
@@ -91,16 +92,16 @@ function App() {
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://nandakishore.onrender.com#nandakishore",
+      "@id": "https://nandakishore.in#nandakishore",
       "name": "Nanda Kishore",
       "alternateName": ["Nand Kishor", "Nanda Kishor", "Nandakishor"],
       "jobTitle": "Creative Designer & Full-Stack Web Developer",
-      "url": "https://nandakishore.onrender.com",
-      "image": "https://nandakishore.onrender.com/images/SEO/heroImg.webp",
+      "url": "https://nandakishore.in",
+      "image": "https://nandakishore.in/images/SEO/heroImg.webp",
       "description": "Expert freelance creative designer and full-stack web developer at Soft Matter, delivering functional, high-performing, and visually exceptional websites that connect design, identity, and technology.",
       "worksFor": {
         "@type": "Organization",
-        "@id": "https://nandakishore.onrender.com#softmatter"
+        "@id": "https://nandakishore.in#softmatter"
       },
       "sameAs": [
         "https://www.linkedin.com/in/nandakishore",
@@ -139,15 +140,15 @@ function App() {
       "brand": {
         "@type": "Brand",
         "name": "Soft Matter",
-        "url": "https://nandakishore.onrender.com"
+        "url": "https://nandakishore.in"
       }
     },
     {
       "@type": "Organization",
-      "@id": "https://nandakishore.onrender.com#softmatter",
+      "@id": "https://nandakishore.in#softmatter",
       "name": "Soft Matter",
-      "url": "https://nandakishore.onrender.com",
-      "logo": "https://nandakishore.onrender.com/images/SEO/logo.png",
+      "url": "https://nandakishore.in",
+      "logo": "https://nandakishore.in/images/SEO/logo.png",
       "description": "Soft Matter is a creative design and web studio by Nanda Kishore, delivering full-stack websites, branding, and design experiences.",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",

@@ -69,10 +69,10 @@ function ServiceCard({ data, isActive, onActivate, projectId }) {
       </div>
       <div className="action_btn">
         <button onClick={onActivate} className="inactive_btn">
-          <img src={primaryPlayBtn} alt="" id="primaryBtn" />
+          <img src={primaryPlayBtn} alt="play button for service card - services provided by soft matter" id="primaryBtn" />
         </button>
         <NavLink to={`/projects/${projectId}`} className="active_btn">
-          <img src={playBtn_active} alt="" />
+          <img src={playBtn_active} alt="review button for service card - services provided by soft matter" />
           <span>REVIEW</span>
         </NavLink>
       </div>

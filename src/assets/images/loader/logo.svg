@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 579.01953 79.27148">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.008em;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        font-family: Outfit-Light, Outfit;
+        font-variation-settings: 'wght' 300;
+        font-weight: 300;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        font-family: Outfit-Bold, Outfit;
+        font-variation-settings: 'wght' 700;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        letter-spacing: -.01398em;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02799em;
+      }
+
+      .cls-7 {
+        fill: #efe3c2;
+        font-size: 72px;
+      }
+
+      .cls-6 {
+        letter-spacing: -.01799em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <text class="cls-7" transform="translate(.00024 60.33618)"><tspan class="cls-3" x="0" y="0">N</tspan><tspan class="cls-1" x="50.61523" y="0">A</tspan><tspan class="cls-3" x="99.71826" y="0">ND</tspan><tspan class="cls-2" x="203.5415" y="0">A</tspan><tspan class="cls-3" x="251.20459" y="0"> </tspan><tspan class="cls-6" x="266.68408" y="0">K</tspan><tspan class="cls-5" x="316.14795" y="0">I</tspan><tspan class="cls-4" x="336.23682" y="0">SHO</tspan><tspan class="cls-5" x="488.80322" y="0">R</tspan><tspan class="cls-4" x="534.73975" y="0">E</tspan></text>
+  </g>
+</svg>
