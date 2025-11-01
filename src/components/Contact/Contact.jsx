@@ -48,7 +48,7 @@ function Contact() {
     <>
     <section className="contact">
       <div className="wheels">
-        <img src={wheel} alt="" />
+        <img src={wheel} alt="identity by osft matter" />
       </div>
       <div className="contact_container">
         <div className="contact_form_container">
@@ -73,14 +73,14 @@ function Contact() {
           <h2>Or Else!</h2>
           <div className="contact_list">
             <div className="contact_email">
-              <img src={email} alt="" />
+              <img src={email} alt="mail contact to nanda kishore from soft matter" />
               <div className="details">
                 <h5>EMAIL : </h5>
                 <p>studio@nandakishore.in</p>
               </div>
               </div>
               <div className="contact_phone">
-                <img src={phone} alt="" />
+                <img src={phone} alt="phone  contact to nanda kishore from soft matter" />
                 <div className="details">
                 <h5>PHONE : </h5>
                 <p>+91 89555 62492</p>
@@ -88,11 +88,11 @@ function Contact() {
               </div>
           </div>
           <div className="contact_list_mobile">
-            <a href='tel:+918955562492' className="contact_email">
-              <img src={email} alt="" />
+            <a href='mailto: studio@nandakishore.in' className="contact_email">
+              <img src={email} alt="mail contact to nanda kishore from soft matter" />
               </a>
               <a href='tel:+918955562492' className="contact_phone">
-                <img src={phone} alt="" />
+                <img src={phone} alt="phone contact to nanda kishore from soft matter" />
               </a>
             
           </div>
