@@ -15,7 +15,7 @@ function Hero({ contactBtn }) {
       <Navbar contactBtn={contactBtn} />
       <div className="hero_img">
         <img
-          src="/images/hero/NandaKishore4.png"
+          src="/images/hero/NandaKishore.webp"
           alt="Nanda Kishore Ramavath - Creative Designer and Full Stack Web Developer"
           id="heroImg"
           loading="eager"

@@ -16,7 +16,7 @@ const testimonials = [
         name: "Nashwan",
         quote: "Go to person for all my needs. His attention to detail and thoughtful design helped elevate our presence",
         img: profileBigB,
-        tags: ["Posters", "Video Editing", "Brand Identity"],
+        tags: ["Logo Design", "Video Editing", "Brand Identity"],
         asset: assetBigB,
         emoji: emojiHappy
     },
@@ -25,7 +25,7 @@ const testimonials = [
         name: "Alessa designs",
         quote: "Working with him was a fantastic experience. He took the time to understand our brand and delivered designs that exceeded our expectations.",  
         img: profileAlessaDesign,
-        tags: ["Social Media", "Brand Identity", "Logo Design"],
+        tags: ["Social Media", "Brand Identity", "Posters"],
         asset: assetAlessaDesign,
         emoji: emojiLove
     },
