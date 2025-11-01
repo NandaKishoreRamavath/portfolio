@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://nandakishore.onrender.com/sitemap.xml
+
+Sitemap: https://nandakishore.in/sitemap.xml
