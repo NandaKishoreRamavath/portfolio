@@ -1,0 +1,16 @@
+{
+  "name": "Nanda Kishore | Soft Matter",
+  "short_name": "Soft Matter",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "description": "Creative designer & full-stack web developer building brands and digital experiences.",
+  "icons": [
+    {
+      "src": "/favicon/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

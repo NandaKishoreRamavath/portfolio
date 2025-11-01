@@ -83,7 +83,7 @@ function App() {
         />
         <link rel="canonical" href="https://nandakishore.in" />
 
-        <meta name="robots" content="index, follow" />
+        
 
         <script type="application/ld+json">
           {`
@@ -97,14 +97,14 @@ function App() {
       "alternateName": ["Nand Kishor", "Nanda Kishor", "Nandakishor"],
       "jobTitle": "Creative Designer & Full-Stack Web Developer",
       "url": "https://nandakishore.in",
-      "image": "https://nandakishore.in/images/SEO/heroImg.webp",
+      "image": "https://nandakishore.in/images/hero/NandaKishore.webp",
       "description": "Expert freelance creative designer and full-stack web developer at Soft Matter, delivering functional, high-performing, and visually exceptional websites that connect design, identity, and technology.",
       "worksFor": {
         "@type": "Organization",
         "@id": "https://nandakishore.in#softmatter"
       },
       "sameAs": [
-        "https://www.linkedin.com/in/nandakishore",
+        "https://www.linkedin.com/in/nanda-kishore-ramavath/",
         "https://www.instagram.com/grounded.pea_/",
         "https://github.com/NandaKishoreRamavath"
       ],
