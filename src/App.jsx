@@ -66,7 +66,7 @@ function AppContent() {
 function App() {
   useEffect(() => {
     import("./components/Home/Home");
-    import("./components/Projects/Projects");
+    // import("./components/Projects/Projects");
   }, []);
 
   return (

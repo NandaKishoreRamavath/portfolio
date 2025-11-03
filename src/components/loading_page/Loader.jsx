@@ -1,7 +1,7 @@
 import React from "react";
 import "./loader.css";
 
-import illustration from "../../assets/images/loader/footer illustration.svg";
+// import illustration from "../../assets/images/loader/footer illustration.svg";
 import logo from "../../assets/images/loader/logo.svg";
 
 function Loader({ loaderSection }) {
@@ -12,7 +12,7 @@ function Loader({ loaderSection }) {
         alt="Nanda Kishore Ramavath from soft matter"
         className="logo"
       />
-      <img src={illustration} alt="Soft Matter by nanda kishore's identity element" className="illustration" />
+      {/* <img src={illustration} alt="Soft Matter by nanda kishore's identity element" className="illustration" /> */}
 
       {loaderSection === "home" ? (
         <div className="loader_content">
